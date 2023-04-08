@@ -1,0 +1,54 @@
+:root {
+  --text-color: white;
+  --button-color: #0dcaf0;
+}
+
+body {
+  background-image: url("./assets/background-image.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.entire-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text-color);
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input>Label {
+  color: var(--text-color);
+  font-size: 35px;
+}
+
+.input>Input {
+  width: 50vw;
+  font-size: 18px;
+  padding: 6px 12px 6px 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.buttons>Button {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 10px;
+}

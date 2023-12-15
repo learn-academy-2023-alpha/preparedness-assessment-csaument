@@ -12,7 +12,7 @@ const App = () => {
   }
 
   const submitEntry = (e) => {
-    setShowModal(true)
+    setShowModal(!showModal)
   }
 
   const resetForm = (e) => {
@@ -28,11 +28,11 @@ const App = () => {
         submitEntry={submitEntry}
         resetForm={resetForm}
       />
-      {<ModalComponent
+      <ModalComponent
         userName={userName}
         showModal={showModal}
         setShowModal={setShowModal}
-      /> && showModal}
+      />
     </div>
   )
 }

@@ -1,21 +1,38 @@
-import React from "react"
-import { Button, Input, Label } from "reactstrap"
+import React, { useState } from "react"
 import ModalComponent from "./components/ModalComponent"
+import FormComponent from "./components/FormComponent"
 import "./App.css"
 
 const App = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [userName, setUserName] = useState("")
+
+  const updateText = (e) => {
+    setUserName(e.target.value)
+  }
+
+  const submitEntry = (e) => {
+    setShowModal(true)
+  }
+
+  const resetForm = (e) => {
+    setUserName("")
+  }
+
   return (
     <div className="entire-content">
-      <h1>Preparedness Assessment</h1>
-      <div className="form">
-        <div className="input">
-          <Label for="name">Enter your name</Label>
-          <Input />
-        </div>
-        <Button>Click Me</Button>
-        <Button>Reset</Button>
-        <ModalComponent />
-      </div>
+      <div className="title">Preparedness Assessment</div>
+      <FormComponent
+        userName={userName}
+        updateText={updateText}
+        submitEntry={submitEntry}
+        resetForm={resetForm}
+      />
+      {<ModalComponent
+        userName={userName}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      /> && showModal}
     </div>
   )
 }
